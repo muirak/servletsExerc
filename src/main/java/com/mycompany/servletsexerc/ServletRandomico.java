@@ -6,7 +6,6 @@
 package com.mycompany.servletsexerc;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,11 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Rafael Souza
+ * @author RAVI
  */
-@WebServlet(name = "ServletControle", urlPatterns = {"/ServletControle"})
-public class ServletControle extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+@WebServlet(name = "ServletRandomico", urlPatterns = {"/ServletRandomico"})
+public class ServletRandomico extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,13 +32,9 @@ public class ServletControle extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String nome = request.getParameter("nome");
-        if(!nome.isEmpty()){
-            nome = nome.toUpperCase();
-            request.getRequestDispatcher("bemvindo.jsp?nome="+nome).forward(request, response); 
-        }else{
-            request.getRequestDispatcher("index.jsp?error="+"Nome Inexistente").forward(request, response);
-        }        
-    }
+            java.util.Random geradorDeNumeros = new java.util.Random();            
+            request.getRequestDispatcher("index.jsp?num="+geradorDeNumeros.nextInt(100)).forward(request, response); 
+         
+        }
     
 }
