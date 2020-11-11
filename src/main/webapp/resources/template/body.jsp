@@ -9,7 +9,7 @@
 <html>
     <body>
         <div id="exer01">
-        <h1>Exercício 01: Servlets "\OlaMundo"</h1>
+        <h1>Exercício 01: Servlets "/OlaMundo"</h1>
     </div>
     <div id="exer02">
         <h1>Exercício 02: Nome </h1>
